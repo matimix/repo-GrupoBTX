@@ -12,6 +12,24 @@ public class Compra {
 	public Compra() {
 		
 	}
+	
+	
+
+	/**
+	 * @param id
+	 * @param producto
+	 * @param cantidad
+	 * @param total
+	 */
+	public Compra(int id, Producto producto, int cantidad, double total) {
+		super();
+		this.id = id;
+		this.producto = producto;
+		this.cantidad = cantidad;
+		this.total = total;
+	}
+
+
 
 	/**
 	 * @return the id
