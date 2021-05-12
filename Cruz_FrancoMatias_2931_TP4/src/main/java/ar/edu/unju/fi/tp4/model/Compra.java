@@ -2,12 +2,19 @@ package ar.edu.unju.fi.tp4.model;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * clase principal con sus atributos y constructores
+ * @author Familia
+ *
+ */
+
 @Component
 public class Compra {
 	private int id;
 	private Producto producto;
 	private int cantidad;
 	private double total;
+	
 	
 	public Compra() {
 		
@@ -20,6 +27,7 @@ public class Compra {
 	 * @param producto
 	 * @param cantidad
 	 * @param total
+	 constructor parametrizado
 	 */
 	public Compra(int id, Producto producto, int cantidad, double total) {
 		super();
