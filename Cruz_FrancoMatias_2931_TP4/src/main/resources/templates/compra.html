@@ -4,7 +4,44 @@
 <meta charset="UTF-8">
 <title>Compra</title>
 </head>
-<body>
-
-</body>
+		<body>
+			
+			<header th:replace="/layouts/header :: header"></header>
+		<div class="card">
+			<div class="card-header text-center bg-dark text-white">
+      				REALIZAR COMPRA
+    		</div>
+    		
+			<div class="card-body container">		
+			
+				<form th:action="@{/compra/guardar}" th:object="${compra}" method="post">
+				
+					<label for="id">Id de la Compra</label>
+					<input type="number" id="id" th:field="*{id}" placeholder="Ingrese Id de la compra"/>
+					<br>
+					<label for="producto">Nombre del Producto</label>
+					<input type="text" id="producto" th:field="*{producto}" placeholder="Ingrese nombre"/>
+					<br>
+					<label for="cantidad">Cantidad del Producto</label>
+					<input type="number" id="cantidad" th:field="*{cantidad}" placeholder="Ingrese la cantidad"/>
+					<br>
+					<label for="total">Total</label>
+					<input type="number" id="total" th:field="*{total}"/>
+					<br>
+					
+					
+					<button type="submit" value="Guardar" class="btn btn-primary btn-sm">Comprar</button>
+					<button type="submit" value="Cancelar" class="btn btn-secondary btn-sm">Cancelar</button>
+					<br><br>
+				</form>
+			</div>
+			
+		</div>	
+			<footer th:replace="/layouts/footer :: footer"></footer>
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.1-lts/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstarp/4.6.0-1/js/bootstrap.min.js}"></script>
+		
+		</body>
 </html>
