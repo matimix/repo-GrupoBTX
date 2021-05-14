@@ -24,7 +24,14 @@ public class ProductoServiceImp implements IProductoService{
 	
 	List<Producto> productos = new ArrayList<Producto>();
 	
-	
+	public ProductoServiceImp() {
+		Producto e1 = new Producto(22,"carne",22,"carnita",2);
+		Producto e2 = new Producto(11,"leche",11,"milk",33);
+				
+		this.productos.add(e1);
+		this.productos.add(e2);
+		
+	}
 	
 	@Override
 	public void addProducto(Producto producto) {
@@ -47,5 +54,25 @@ public class ProductoServiceImp implements IProductoService{
 		
 		
 	}
+
+	
+
+	@Override
+	public List<Producto> getAllProductos() {
+		return this.productos;
+	}
+
+	@Override
+	public Producto getProductoporCodigo(int codigo) {
+		Producto produ = new Producto();
+		for(Producto pro: productos) {
+			if(pro.getCodigo() == codigo) {
+				 produ = pro;
+			}
+		}
+	return produ;
+	}
+
+	
 	
 }
