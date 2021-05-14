@@ -2,11 +2,7 @@ package ar.edu.unju.fi.tp4.model;
 
 import org.springframework.stereotype.Component;
 
-/**
- * aqui va la clase java principal con sus atributos y sus constuctores
- * @author matia
- *
- */
+
 
 @Component
 public class Producto {
@@ -19,9 +15,20 @@ public class Producto {
 	
 
 
-public Producto(){
-	
-}
+public Producto() {
+		super();
+	}
+
+
+
+public Producto(int codigo, String nombre, double precio, String marca, int stock) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.precio = precio;
+		this.marca = marca;
+		this.stock = stock;
+	}
 
 
 
