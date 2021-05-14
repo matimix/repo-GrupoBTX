@@ -12,10 +12,18 @@
 			<header th:replace="/layouts/header :: header"></header>
 		<div class="card">
 			<div class="card-header text-center bg-dark text-white">
-      				ALTA DE UN PRODUCTO
+      				Compra
     		</div>
+    	</div>	
     		
-			<div class="card-body container">		
+			<div class="row col-sm-12 col-md">
+<div class="row col-sm-12 col-md">
+<header class="encabezado">
+<h1>FORMULARIO ALTA DE UNA COMPRA</h1>
+</header>
+
+
+ <div class="contenedor">		
 			
 				<form th:action="@{/compra/guardar}" th:object="${compra}" method="post">
 				<label for="id">Id de la Compra</label>
@@ -30,16 +38,23 @@
 					  th:selected="false"
 					  />
 					</select>
+					<br>
 					<label for="cantidad">Cantidad del Producto</label>
 					<input type="number" id="cantidad" th:field="*{cantidad}" placeholder="Ingrese la cantidad"/>
+					<br>
 					<label for="total">Total</label>
 					<input type="number" id="total" th:field="*{total}"/>
+					<br>
 					<button type="submit" value="Guardar" class="btn btn-primary btn-sm">Comprar</button>
-					<br><br>
+					<br>
 				</form>
 			</div>
 			
-		</div>	
+			</div>
+			<div class="col  col-md-2">
+            <aside th:replace="/layouts/publicidad :: aside" style="width: 18rem; margin-left:2rem"></aside>
+           </div>	
+		</div>
 			<footer th:replace="/layouts/footer :: footer"></footer>
 	
 	<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
