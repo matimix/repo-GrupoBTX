@@ -63,7 +63,7 @@ public class ProductoServiceImp implements IProductoService{
 	}
 
 	@Override
-	public Producto getProductoporCodigo(int codigo) {
+	public Producto getProductoporCodigo(long codigo) {
 		Producto produ = new Producto();
 		for(Producto pro: productos) {
 			if(pro.getCodigo() == codigo) {

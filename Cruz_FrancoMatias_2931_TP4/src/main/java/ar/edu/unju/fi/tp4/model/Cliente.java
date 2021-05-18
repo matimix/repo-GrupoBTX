@@ -6,16 +6,35 @@ import java.time.LocalDateTime;
 import java.time.Period;
 import java.util.Calendar;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
-
 @Component("clienteObj")
+@Entity
+@Table(name="EMPLEADOS")
 public class Cliente {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	
+	@Column(name="emp_tipoDocumento")
 	private String tipoDocumento;
+	@Column(name="emp_dni")
 	private int dni;
+	@Column(name="emp_nombreApellido",length = 100)
 	private String nombreApellido;
+	@Column(name="emp_email")
 	private String email;
+	@Column(name="emp_password")
+	
+	
 	private String password;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaNacimiento;
@@ -100,6 +119,19 @@ public class Cliente {
 	}
 	public void setFechaUltimaCompra(LocalDate fechaUltimaCompra) {
 		this.fechaUltimaCompra = fechaUltimaCompra;
+	}
+	
+	
+	
+	
+	
+	
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
 	}
 	@Override
 	public String toString() {
