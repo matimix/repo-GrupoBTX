@@ -39,8 +39,8 @@ public class CompraController {
 	@PostMapping("/compra/guardar")
 	   public ModelAndView getGuardarCompraPage(@ModelAttribute("compra")Compra compra) {
 		    ModelAndView modelView = new ModelAndView("lista-compra");
-		    Producto producto = productoService.getProductoporCodigo(compra.getProducto().getCodigo());
-		    compra.setProducto(producto);
+		 //   Producto producto = productoService.getProductoporCodigo(compra.getProducto().getCodigo());
+		  //  compra.setProducto(producto);
 		    compraService.guardarCompra(compra);
 		    modelView.addObject("compras",compraService.getAllCompras());
 		    

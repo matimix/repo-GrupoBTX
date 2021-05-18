@@ -16,7 +16,7 @@ public interface IProductoService {
 	
 	public List<Producto> getAllProductos();
 	
-	public Producto getProductoporCodigo(int codigo);
+	public Producto getProductoporCodigo(long codigo);
 	
 	
 	
