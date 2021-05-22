@@ -36,6 +36,7 @@ public class Compra {
 	
 	@OneToMany(mappedBy="compra")
 	private List<Producto> productos = new ArrayList<Producto>();
+	@Autowired
 	//private Producto producto;
 	
 	public Compra() {
