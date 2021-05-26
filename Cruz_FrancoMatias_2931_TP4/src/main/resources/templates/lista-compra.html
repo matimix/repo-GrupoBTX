@@ -14,15 +14,15 @@
 	<header th:replace="/layouts/header :: header"></header>
 		<div class="card">
 			<div class="card-header text-center bg-dark text-white">
-      				LISTAR COMPRAS
+      				ALTA DE UN PRODUCTO
     		</div>
 	
-	<h2>Detalle del Producto Comprado</h2>
+	<h2>Detalle del Producto</h2>
 	<tr th:each="c : ${compras}">
 	<p>ID: <spam th:text="${c.id}"></spam></p>
 	<p>CANTIDAD: <spam th:text="${c.cantidad}"></spam></p>
 	<p>TOTAL: <spam th:text="${c.total}"></spam></p>
-	
+	<p>NOMBRE: <spam th:text="${c.producto.nombre}"></spam></p>
 	</tr>
 	
 	<footer th:replace="/layouts/footer :: footer"></footer>
