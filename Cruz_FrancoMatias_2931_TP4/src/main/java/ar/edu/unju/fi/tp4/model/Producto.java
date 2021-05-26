@@ -1,38 +1,19 @@
 package ar.edu.unju.fi.tp4.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
 import org.springframework.stereotype.Component;
 
 
 
 @Component
-@Entity
-@Table(name="PRODUCTOS")
 public class Producto {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long codigo;
-	@Column(name="prod_nombre")
+
+	private int codigo;
 	private String nombre;
-	@Column(name="prod_precio")
 	private double precio;
-	@Column(name="prod_marca")
 	private String marca;
-	@Column(name="prod_stock")
 	private int stock;
 	
-   @ManyToOne(fetch = FetchType.LAZY)
-   @JoinColumn(name="com_id")
-	private Compra compra;
+
 
 public Producto() {
 		super();
@@ -51,17 +32,19 @@ public Producto(int codigo, String nombre, double precio, String marca, int stoc
 
 
 
-
-
-
-
-public long getCodigo() {
+/**
+ * @return the codigo
+ */
+public int getCodigo() {
 	return codigo;
 }
 
 
 
-public void setCodigo(long codigo) {
+/**
+ * @param codigo the codigo to set
+ */
+public void setCodigo(int codigo) {
 	this.codigo = codigo;
 }
 
@@ -135,23 +118,6 @@ public int getStock() {
  */
 public void setStock(int stock) {
 	this.stock = stock;
-}
-
-
-
-
-
-
-
-
-public Compra getCompra() {
-	return compra;
-}
-
-
-
-public void setCompra(Compra compra) {
-	this.compra = compra;
 }
 
 

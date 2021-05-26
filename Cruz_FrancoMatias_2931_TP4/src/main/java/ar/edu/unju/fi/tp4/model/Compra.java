@@ -1,16 +1,5 @@
 package ar.edu.unju.fi.tp4.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,46 +10,28 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-
-@Entity
-@Table(name="COMPRAS")
 public class Compra {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
-	@Column(name="com_cantidad")
+	private int id;
 	private int cantidad;
-	@Column(name="com_total")
 	private double total;
 	
-	@OneToMany(mappedBy="compra")
-	private List<Producto> productos = new ArrayList<Producto>();
 	@Autowired
-	//private Producto producto;
+	private Producto producto;
+	
 	
 	public Compra() {
 		
 	}
 
 
-	
-
-
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
 
-
-
-
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-
-
-
 
 
 	public int getCantidad() {
@@ -86,30 +57,14 @@ public class Compra {
 	
 
 
-	
-
-
-	public List<Producto> getProductos() {
-		return productos;
-	}
-	
-	
-
-
-
-
-
-	
-
-
-
-
-	public void setProductos(List<Producto> productos) {
-		this.productos = productos;
+	public Producto getProducto() {
+		return producto;
 	}
 
 
-
+	public void setProducto(Producto producto) {
+		this.producto = producto;
+	}
 
 
 	@Override
